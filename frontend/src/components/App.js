@@ -68,7 +68,7 @@ export default function App() {
             auth.checkToken(jwt)
                 .then(res => {
                     if (res) {
-                        setEmail(res.data.email);
+                        setEmail(res.email);
                         setLoggedIn(true);
                     }
                 })
@@ -164,7 +164,7 @@ export default function App() {
         setLoading(true);
         auth.register(registerData)
             .then(res => {
-                if (res.data)
+                if (res)
                     setStatusOk(true);
                 else
                     setStatusOk(false);
